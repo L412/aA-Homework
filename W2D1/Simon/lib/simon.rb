@@ -29,7 +29,7 @@ class Simon
   end
 
   def show_sequence
-
+    add_random_color
   end
 
   def require_sequence
@@ -41,14 +41,16 @@ class Simon
   end
 
   def round_success_message
-
+    puts "Congratulations! You passed round #{@sequence_length}!"
   end
 
   def game_over_message
-
+    puts "Sorry, but that was incorrent! You lose!"
   end
 
   def reset_game
-
+    @sequence_length = 1
+    @game_over = false
+    @seq = []
   end
 end
