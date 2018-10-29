@@ -10,6 +10,13 @@ class Simon
   end
 
   def play
+    system("clear")
+    puts "Let's play Simon!"
+    puts "You'll be shown a sequence of colors."
+    puts "It's your duty to remember each one!"
+    sleep(3)
+    system("clear")
+
     until @game_over
       take_turn
     end
@@ -33,14 +40,15 @@ class Simon
     puts "This is the sequence:"
     @seq.each do |color|
       puts color
-      sleep(1)
+      sleep(2)
       system("clear")
-      sleep(.5)
+      sleep(1)
     end
   end
 
   def require_sequence
     puts "Did you catch that? Let's find out!"
+    puts "Please type in the first letter of each color."
     @seq.each do |color|
       answer = gets.chomp
       if answer[0] != color[0]
@@ -58,6 +66,8 @@ class Simon
   def round_success_message
     puts "Congratulations! You passed round #{@sequence_length}!"
     puts "Unfortunately, it only gets harder from here."
+    sleep(3)
+    system("clear")
   end
 
   def game_over_message
@@ -69,4 +79,9 @@ class Simon
     @game_over = false
     @seq = []
   end
+end
+
+if __FILE__ == $0
+  g = Simon.new
+  g.play
 end
