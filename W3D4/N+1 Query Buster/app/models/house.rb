@@ -21,7 +21,7 @@ class House < ApplicationRecord
   def better_seeds_query
     plants = self
       .plants
-      .joins(:seeds)
+      .includes(:seeds)
 
     seeds = []
     plants.each do |plant|
