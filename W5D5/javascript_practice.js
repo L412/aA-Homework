@@ -9,6 +9,3 @@ function hammerTime(time) {
     alert(`${time} is HAMMER TIME!`);
   })
   ${time} is hammertime!
-}
-
-//Some tea? Some biscuits?
