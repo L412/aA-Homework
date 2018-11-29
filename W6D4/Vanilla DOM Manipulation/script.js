@@ -18,14 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // adding SF places as list items
 
-  // --- your code here!
+  const favePlaceSubmit = (event) => {
+
+    event.preventDefault();
+
+    const favePlaces = document.querySelector(".favorite-input");
+    const favorite = favePlaces.value;
+    favePlaces.value = "";
+
+    const addLi = document.createElement("li");
+    addLi.textContent = favorite;
+
+    const faveList = document.getElementById("sf-places");
+    faveList.appendChild(addLi);
+  };
+
+  const listSubmitButton = document.querySelector(".favorite-submit");
+  listSubmitButton.addEventListener("click", favePlaceSubmit);
 
 
 
   // adding new photos
 
-  // --- your code here!
+  const photoSubmit = (event) => {
+    evenet.preventDefault();
 
+    // I don't understand the toggle form part! Confused...
+  }
 
+  const photoSubmission = document.querySelector(".photo-url-submit");
+  photoSubmission.addEventListener("click", photoSubmit);
 
 });
